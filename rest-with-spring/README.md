@@ -9,8 +9,16 @@ Simple REST hello world greeting implemented with Spring Boot.
 ./mvnw spring-boot:run
 ```
 
-###  Access application via
+### Using Application 
+
+#### Hello World
 
 ```
 http://localhost:8080/greeting?name=Bob
+``` 
+
+#### Hello World with Path Variable
+
+```
+http://localhost:8080/greeting/Bob
 ``` 
