@@ -1,4 +1,4 @@
-package com.alika.examples.rest;
+package com.alika.examples.rest.greeting;
 
 import lombok.Value;
 import org.springframework.web.bind.annotation.GetMapping;
