@@ -41,6 +41,6 @@ public class UserDao implements IUserDao {
                 return user;
         }
 
-        throw new ObjectNotFoundException(String.format("User object not found [id = %s]",id));
+        throw new UserNotFoundException(String.format("User object not found [id = %s]",id));
     }
 }
