@@ -4,11 +4,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
 public class UserDao implements IUserDao {
 
+    private static final String USER_OBJECT_NOT_FOUND_FOR_ID = "User object not found [id = %s]";
     private List<User> users = new ArrayList<>();
     private int userCount = 0;
 
@@ -35,12 +37,25 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public User getUser(int id) {
+    public User getUserById(int id) {
         for (User user: users) {
             if (user.getId() == id)
                 return user;
         }
 
-        throw new UserNotFoundException(String.format("User object not found [id = %s]",id));
+        throw new UserNotFoundException(String.format(USER_OBJECT_NOT_FOUND_FOR_ID,id));
+    }
+
+    @Override
+    public void deleteUserById(int id) {
+        Iterator<User> i = users.iterator();
+        while (i.hasNext()) {
+            User user = i.next();
+            if (user.getId().equals(id)) {
+                i.remove();
+                return;
+            }
+        }
+        throw new UserNotFoundException(String.format(USER_OBJECT_NOT_FOUND_FOR_ID, id));
     }
 }

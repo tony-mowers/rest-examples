@@ -7,5 +7,7 @@ public interface IUserDao {
 
     User saveUser(User user);
 
-    User getUser(int id);
+    User getUserById(int id);
+
+    void deleteUserById(int id);
 }

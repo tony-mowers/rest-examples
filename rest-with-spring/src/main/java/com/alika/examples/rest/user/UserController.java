@@ -24,15 +24,18 @@ public class UserController {
     }
 
     @GetMapping(path = "/users/{id}")
-    public User getUsers(
-            @PathVariable Integer id)
+    public User getUserById(@PathVariable int id)
     {
-        return userDao.getUser(id);
+        return userDao.getUserById(id);
+    }
+
+    @DeleteMapping(path = "/users/{id}")
+    public void deleteUserById(@PathVariable int id) {
+        userDao.deleteUserById(id);
     }
 
     @PostMapping(path = "/users")
-    public ResponseEntity<URI> createUser(
-            @RequestBody User user)
+    public ResponseEntity<URI> createUser(@RequestBody User user)
     {
         User savedUser = userDao.saveUser(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
