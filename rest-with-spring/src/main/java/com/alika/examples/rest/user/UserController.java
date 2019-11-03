@@ -1,6 +1,8 @@
 package com.alika.examples.rest.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -8,6 +10,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 public class UserController {
@@ -25,9 +30,13 @@ public class UserController {
     }
 
     @GetMapping(path = "/users/{id}")
-    public User getUserById(@PathVariable int id)
+    public EntityModel<User> getUserById(@PathVariable int id)
     {
-        return userDao.getUserById(id);
+        final User user = userDao.getUserById(id);
+        EntityModel<User> entityModel = new EntityModel<>(user);
+
+        entityModel.add(getLinkToAllUsers());
+        return entityModel;
     }
 
     @DeleteMapping(path = "/users/{id}")
@@ -46,4 +55,9 @@ public class UserController {
 
         return ResponseEntity.created(uri).build();
     }
+
+    private Link getLinkToAllUsers() {
+        return linkTo(methodOn(this.getClass()).getAllUsers()).withRel("all-users");
+    }
+
 }
