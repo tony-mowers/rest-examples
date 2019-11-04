@@ -14,7 +14,10 @@ Simple REST hello world greeting implemented with Spring Boot.
 #### __Greetings__ API Examples
 
 ```
-curl -H "Accept-Language: fr" http://localhost:8080/greeting?name=Bob
+curl -i \
+    -H "Accept-Language: fr" \
+    -H "Accept: application/xml" \
+    http://localhost:8080/greeting?name=Bob
 ``` 
 
 ```
