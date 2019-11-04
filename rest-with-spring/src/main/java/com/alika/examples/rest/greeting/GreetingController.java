@@ -1,6 +1,8 @@
 package com.alika.examples.rest.greeting;
 
 import lombok.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,7 @@ public class GreetingController {
 
     private MessageSource messageSource;
 
+    @Autowired
     public GreetingController(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
