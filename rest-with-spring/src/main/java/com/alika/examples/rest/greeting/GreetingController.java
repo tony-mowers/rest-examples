@@ -1,26 +1,36 @@
 package com.alika.examples.rest.greeting;
 
 import lombok.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.MessageSource;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 @RestController
 public class GreetingController {
 
+    private MessageSource messageSource;
+
+    public GreetingController(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
     @GetMapping(path = "/greeting")
     public Greeting hello(
-            @RequestParam(value = "name", defaultValue = "World") String name
-    ) {
-        return new Greeting(String.format("Hello %s!",name));
+            @RequestHeader(name="Accept-Language",required = false) Locale locale,
+            @RequestParam(value = "name", defaultValue = "World") String name)
+    {
+        final String message = messageSource.getMessage("hello.message", null, locale);
+        return new Greeting(String.format(message,name));
     }
 
     @GetMapping(path = "/greeting/{name}")
     public Greeting helloWithPathVariable(
+            @RequestHeader(name="Accept-Language",required = false) Locale locale,
             @PathVariable String name
     ) {
-        return new Greeting(String.format("Hello %s!",name));
+        final String message = messageSource.getMessage("hello.message", null, locale);
+        return new Greeting(String.format(message,name));
     }
 
     @Value
