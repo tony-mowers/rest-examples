@@ -42,3 +42,10 @@ curl -i \
 -d '{"name" : "Lex Mowers", "birthDate":"2019-10-29T19:58:36.290+0000"}' \
 -H "Content-Type: application/json" -X POST http://localhost:8080/users
 ```
+
+### Actuator Examples
+
+```
+http://localhost:8080/browser/index.html#/actuator
+http://localhost:8080/browser/index.html#/users/1
+```
