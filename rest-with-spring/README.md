@@ -15,6 +15,7 @@ Simple REST hello world greeting implemented with Spring Boot.
 
 ```
 curl -i \
+    -u username:password \
     -H "Accept-Language: fr" \
     -H "Accept: application/xml" \
     http://localhost:8080/greeting?name=Bob
@@ -28,17 +29,17 @@ curl http://localhost:8080/greeting/Bob
 
 Get list of all users
 ```
-curl http://localhost:8080/users
+curl -u username:password http://localhost:8080/users
 ```
 
 Get a single user
 ```
-curl http://localhost:8080/users/2
+curl -u username:password http://localhost:8080/users/2
 ```
 
 Create a single user
 ```
-curl -i \
+curl -i -u username:password \
 -d '{"name" : "Lex Mowers", "birthDate":"2019-10-29T19:58:36.290+0000"}' \
 -H "Content-Type: application/json" -X POST http://localhost:8080/users
 ```
