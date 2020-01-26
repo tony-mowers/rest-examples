@@ -1,4 +1,4 @@
-package com.alika.examples.rest.user;
+package ch.alika.example.rest.user;
 
 import java.util.List;
 

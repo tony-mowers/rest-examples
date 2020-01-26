@@ -1,4 +1,4 @@
-package com.alika.examples.rest.somebean;
+package ch.alika.example.rest.somebean;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;

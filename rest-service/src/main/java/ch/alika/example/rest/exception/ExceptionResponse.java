@@ -1,4 +1,4 @@
-package com.alika.examples.rest.exception;
+package ch.alika.example.rest.exception;
 
 import lombok.Data;
 import lombok.Value;

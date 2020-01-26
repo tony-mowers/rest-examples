@@ -1,4 +1,4 @@
-package com.alika.examples.rest;
+package ch.alika.example.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import java.util.Locale;
 
 @SpringBootApplication
-public class Application {
+public class RestServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(RestServiceApplication.class, args);
 	}
 
 	@Bean

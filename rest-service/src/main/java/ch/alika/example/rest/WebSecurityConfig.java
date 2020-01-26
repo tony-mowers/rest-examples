@@ -1,4 +1,4 @@
-package com.alika.examples.rest;
+package ch.alika.example.rest;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;

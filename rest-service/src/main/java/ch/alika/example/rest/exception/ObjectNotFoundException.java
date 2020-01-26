@@ -1,4 +1,4 @@
-package com.alika.examples.rest.exception;
+package ch.alika.example.rest.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

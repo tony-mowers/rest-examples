@@ -1,4 +1,4 @@
-package com.alika.examples.rest.user;
+package ch.alika.example.rest.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;

@@ -1,4 +1,4 @@
-package com.alika.examples.rest.greeting;
+package ch.alika.example.rest.greeting;
 
 import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;

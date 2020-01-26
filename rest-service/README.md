@@ -1,4 +1,4 @@
-# REST Example
+# REST Service Example
 
 Simple REST hello world greeting implemented with Spring Boot.
 

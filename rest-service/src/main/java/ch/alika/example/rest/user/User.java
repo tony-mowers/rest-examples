@@ -1,4 +1,4 @@
-package com.alika.examples.rest.user;
+package ch.alika.example.rest.user;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
