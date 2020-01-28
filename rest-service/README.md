@@ -3,15 +3,21 @@
 Simple REST hello world greeting implemented with Spring Boot.
 
 
-### Run application using
+## Run application using
 
 ```
 ./mvnw spring-boot:run
 ```
 
-### Using Application via curl 
+## Accessing Swagger API documentation
 
-#### __Greetings__ API Examples
+```
+http://localhost:8080/swagger-ui.html
+```
+
+## Using Application via curl 
+
+### __Greetings__ API Examples
 
 ```
 curl -i \
@@ -25,7 +31,7 @@ curl -i \
 curl http://localhost:8080/greeting/Bob
 ``` 
 
-#### __Users__ API Examples
+### __Users__ API Examples
 
 Get list of all users
 ```
@@ -44,7 +50,7 @@ curl -i -u username:password \
 -H "Content-Type: application/json" -X POST http://localhost:8080/users
 ```
 
-### Actuator Examples
+## Actuator Examples
 
 ```
 http://localhost:8080/browser/index.html#/actuator
