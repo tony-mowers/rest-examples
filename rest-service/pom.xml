@@ -11,8 +11,8 @@
 	<groupId>ch.alika.example</groupId>
 	<artifactId>rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rest</name>
-	<description>Demo project for Spring Boot</description>
+	<name>REST service example</name>
+	<description>Spring REST service example</description>
 
 	<properties>
 		<java.version>1.8</java.version>
