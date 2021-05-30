@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @SpringBootApplication
 public class ConsumingRestApplication {
-    public static final String QUOTE_SVC_URL = "https://gturnquist-quoters.cfapps.io/api/random";
+    public static final String QUOTE_SVC_URL = "https://api.chucknorris.io/jokes/random";
 
     public static void main(String[] args) {
         SpringApplication.run(ConsumingRestApplication.class, args);

@@ -7,6 +7,6 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class QuoteDTO {
-    private String type;
-    private ValueDTO value;
+    private String id;
+    private String value;
 }
